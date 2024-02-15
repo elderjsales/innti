@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="500">
+  <div class="container">
+    <div class="navbar-translate">
+      <a class="navbar-brand" [routerLink]="['/home']">
+        <img src="assets/img/innti-name-logo.png" style="width: 120px;" alt="INNTI">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="sidebarToggle()">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+      <ul class="navbar-nav ml-auto">
+        <!-- WEB -->
+        <li class="nav-item" *ngIf="isHome()">
+          <a href="#home" class="nav-link">INÍCIO</a>
+        </li>
+        <li class="nav-item" *ngIf="isHome()">
+          <a href="#about" class="nav-link">QUEM SOMOS</a>
+        </li>
+        <li class="nav-item" *ngIf="isHome()">
+          <a href="#services" class="nav-link">O QUE FAZEMOS</a>
+        </li>
+        <li class="nav-item" *ngIf="isHome()">
+          <a href="#contacts" class="nav-link">CONTATO</a>
+        </li>
+        <!-- MOBILE -->
+        <li class="nav-item" *ngIf="!isHome()">
+          <a [routerLink]="['/home']" class="nav-link">INICIO</a>
+        </li>
+        <li class="nav-item" *ngIf="!isHome()">
+          <a [routerLink]="['/about']" class="nav-link">QUEM SOMOS</a>
+        </li>
+        <li class="nav-item" *ngIf="!isHome()">
+          <a [routerLink]="['/#services']" class="nav-link">O QUE FAZEMOS</a>
+        </li>
+        <li class="nav-item" *ngIf="!isHome()">
+          <a [routerLink]="['/#contacts']" class="nav-link">CONTATO</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
